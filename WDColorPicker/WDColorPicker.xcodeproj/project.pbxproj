@@ -154,7 +154,7 @@
 				TargetAttributes = {
 					F505CF9E1F34E9420012624D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3CCXG2UGPS;
+						DevelopmentTeam = J5NF9S58EH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -308,7 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3CCXG2UGPS;
+				DEVELOPMENT_TEAM = J5NF9S58EH;
 				INFOPLIST_FILE = "$(SRCROOT)/WDColorPicker/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -322,7 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3CCXG2UGPS;
+				DEVELOPMENT_TEAM = J5NF9S58EH;
 				INFOPLIST_FILE = "$(SRCROOT)/WDColorPicker/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

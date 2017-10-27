@@ -17,7 +17,7 @@ import UIKit
 open class WDColorPickerView: UIView, ColorPickerViewDelegate {
     @IBOutlet weak var hueSaturationColorSlider: UIView!
 
-    var pickerInitialColor : UIColor = .black
+    var pickerInitialColor : UIColor = .lightGray
     
     private static var overlay : UIView?
     private static var topView : UIView? {
@@ -33,15 +33,15 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
             return nil
         }
     }
-    
-    @IBOutlet weak private var currentColorView: UIView!
+	
+	@IBOutlet weak private var selectColorView: UIView!
     @IBOutlet weak private var brightnessColorPicker: BrightnessColorPickerView!
     @IBOutlet weak private var hueSaturationColorPicker: HueSaturationColorPickerView!
     @IBOutlet weak private var hueSaturationColorSliderHorizontalPosition: NSLayoutConstraint!
     @IBOutlet weak private var hueSaturationColorSliderVerticalPosition: NSLayoutConstraint!
     @IBOutlet weak private var brightnessColorSliderVerticalPosition: NSLayoutConstraint!
     
-    public var delegate:WDColorPickerViewDelegate?
+    public var delegate: WDColorPickerViewDelegate?
     public var currentColor : UIColor {
         get {
             return UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: CGFloat(brightnessColorPicker.brightness), alpha: 1.0)
@@ -50,7 +50,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         {
             self.brightnessColorPicker.initialize(color: newValue)
             self.hueSaturationColorPicker.initialize(color: newValue)
-            self.currentColorView.backgroundColor = newValue
+			self.selectColorView.backgroundColor = newValue
         }
     }
     
@@ -58,7 +58,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
     class func showOverlay()
     {
         overlay = UIView(frame: (WDColorPickerView.topView!.frame))
-        overlay?.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
+        overlay?.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.3)
         overlay?.alpha = 0.0
         WDColorPickerView.topView?.addSubview(overlay!)
         overlay?.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +70,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         WDColorPickerView.topView?.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
     }
     
-    public class func showPicker(delegate:Any? = nil, initialColor:UIColor? = nil)
+    public class func showPicker(delegate: Any? = nil, initialColor: UIColor? = nil)
     {
         self.showOverlay()
         
@@ -93,7 +93,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         self.animateShowPicker(colorPicker: colorPicker)
     }
     
-    class func animateShowPicker(colorPicker:WDColorPickerView)
+    class func animateShowPicker(colorPicker: WDColorPickerView)
     {
         UIView.animate(withDuration: 0.3, animations: { 
             colorPicker.alpha = 1.0
@@ -139,9 +139,9 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
             hueSaturationColorPicker.colorDelegate = self
             brightnessColorPicker.initialize(color: pickerInitialColor)
             hueSaturationColorPicker.initialize(color: pickerInitialColor)
-            if currentColorView != nil
+            if selectColorView != nil
             {
-                self.currentColorView.backgroundColor = UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: CGFloat(brightnessColorPicker.brightness), alpha: 1.0)
+                self.selectColorView.backgroundColor = UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: CGFloat(brightnessColorPicker.brightness), alpha: 1.0)
             }
             if hueSaturationColorSlider != nil
             {
@@ -172,22 +172,23 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         if colorPicker == brightnessColorPicker
         {
             self.hueSaturationColorPicker.reload(brightness: brightness)
-            self.currentColorView.backgroundColor = currentColor
+            self.selectColorView.backgroundColor = currentColor
         }
         else if colorPicker == hueSaturationColorPicker
         {
             self.brightnessColorPicker.reload(hue: hue, saturation: saturation)
-            self.currentColorView.backgroundColor = currentColor
+            self.selectColorView.backgroundColor = currentColor
         }
         if let colorDelegate = delegate
         {
             colorDelegate.colorChanged?(colorPicker: self, color: currentColor)
         }
-        self.setCursorPositions()
         if hueSaturationColorSlider != nil
         {
             self.hueSaturationColorSlider.backgroundColor = UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: 1.0, alpha: 1.0)
         }
+		self.setCursorPositions()
+
     }
     
     func setCursorPositions()
@@ -221,9 +222,12 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         self.layoutIfNeeded()
     }
     
-    class func getColorPicker(withSelectButton:Bool) -> WDColorPickerView
+    class func getColorPicker(withSelectButton: Bool) -> WDColorPickerView
     {
         let colorPickerView = self.instantiateFromXib(nibIndex: withSelectButton ? 0 : 1)
+		colorPickerView.layer.masksToBounds = true
+		colorPickerView.clipsToBounds = true
+		colorPickerView.layer.cornerRadius = 8.0
         return colorPickerView 
     }
 }

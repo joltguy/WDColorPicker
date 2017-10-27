@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WDColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="WDColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="424" height="395"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYN-cZ-2xi">
                     <rect key="frame" x="394" y="0.0" width="30" height="30"/>
-                    <state key="normal" title="X">
+                    <state key="normal" title="✖︎">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -129,16 +129,9 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVG-zL-Rxm">
                             <rect key="frame" x="1" y="0.5" width="401.5" height="38"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkl-le-wJi">
-                                    <rect key="frame" x="2" y="2" width="34" height="34"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="Rkl-le-wJi" secondAttribute="height" id="XdI-yy-0sl"/>
-                                    </constraints>
-                                </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHv-gy-07P">
-                                    <rect key="frame" x="36" y="0.0" width="365.5" height="38"/>
-                                    <state key="normal" title="Select color">
+                                    <rect key="frame" x="0.0" y="0.0" width="401.5" height="38"/>
+                                    <state key="normal" title="☑️">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -148,13 +141,10 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="Rkl-le-wJi" firstAttribute="height" secondItem="LVG-zL-Rxm" secondAttribute="height" constant="-4" id="3pk-5H-1gJ"/>
-                                <constraint firstItem="Rkl-le-wJi" firstAttribute="leading" secondItem="LVG-zL-Rxm" secondAttribute="leading" constant="2" id="AXO-h8-c8U"/>
                                 <constraint firstItem="vHv-gy-07P" firstAttribute="centerY" secondItem="LVG-zL-Rxm" secondAttribute="centerY" id="G1C-Fx-Opu"/>
                                 <constraint firstItem="vHv-gy-07P" firstAttribute="height" secondItem="LVG-zL-Rxm" secondAttribute="height" id="dxX-BX-GdO"/>
-                                <constraint firstAttribute="trailing" secondItem="vHv-gy-07P" secondAttribute="trailing" id="kHM-Ty-Bht"/>
-                                <constraint firstItem="Rkl-le-wJi" firstAttribute="centerY" secondItem="LVG-zL-Rxm" secondAttribute="centerY" id="ktQ-XM-1Jt"/>
-                                <constraint firstItem="vHv-gy-07P" firstAttribute="leading" secondItem="Rkl-le-wJi" secondAttribute="trailing" id="zx2-MH-Is7"/>
+                                <constraint firstItem="vHv-gy-07P" firstAttribute="trailing" secondItem="LVG-zL-Rxm" secondAttribute="trailing" id="kHM-Ty-Bht"/>
+                                <constraint firstItem="vHv-gy-07P" firstAttribute="leading" secondItem="LVG-zL-Rxm" secondAttribute="leading" id="zx2-MH-Is7"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -167,7 +157,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="m7G-Qy-atM" firstAttribute="height" secondItem="8EI-d4-Dde" secondAttribute="width" id="0Gy-5m-tEo"/>
@@ -188,22 +178,21 @@
                 <constraint firstAttribute="bottom" secondItem="m7G-Qy-atM" secondAttribute="bottom" constant="10" id="k3W-lh-bHl"/>
                 <constraint firstItem="pIR-Xm-OOy" firstAttribute="leading" secondItem="rgk-ro-Nvl" secondAttribute="leading" id="lhg-JE-fRt"/>
                 <constraint firstAttribute="trailing" secondItem="DYN-cZ-2xi" secondAttribute="trailing" id="oDE-Qx-58s"/>
-                <constraint firstItem="Rkl-le-wJi" firstAttribute="centerX" secondItem="8EI-d4-Dde" secondAttribute="centerX" id="txo-hE-AOH"/>
                 <constraint firstItem="m7G-Qy-atM" firstAttribute="top" secondItem="rgk-ro-Nvl" secondAttribute="bottom" constant="10" id="zE0-Cv-SEn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="brightnessColorPicker" destination="8EI-d4-Dde" id="vrT-vd-v32"/>
                 <outlet property="brightnessColorSliderVerticalPosition" destination="jBx-H3-fO9" id="enO-OL-Ny5"/>
-                <outlet property="currentColorView" destination="Rkl-le-wJi" id="enc-XN-wJW"/>
                 <outlet property="hueSaturationColorPicker" destination="rgk-ro-Nvl" id="QCH-ph-3El"/>
                 <outlet property="hueSaturationColorSlider" destination="uKY-kb-qO7" id="r8N-mG-dXT"/>
                 <outlet property="hueSaturationColorSliderHorizontalPosition" destination="lhg-JE-fRt" id="RTG-N8-3rU"/>
                 <outlet property="hueSaturationColorSliderVerticalPosition" destination="9dn-tb-Zs6" id="nwr-JJ-bPc"/>
+                <outlet property="selectColorView" destination="vHv-gy-07P" id="XNp-QT-tJL"/>
             </connections>
             <point key="canvasLocation" x="77" y="-186.5"/>
         </view>
-        <view contentMode="scaleToFill" id="dfm-0J-LgU" customClass="WDColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="dfm-0J-LgU" customClass="WDColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="424" height="395"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -311,15 +300,9 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsr-Wv-z1t">
                             <rect key="frame" x="1" y="0.5" width="401.5" height="38"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VK-zT-tEf">
-                                    <rect key="frame" x="2" y="2" width="34" height="34"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="2VK-zT-tEf" secondAttribute="height" id="KAd-gp-yO4"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiq-L0-ARC">
-                                    <rect key="frame" x="46" y="8" width="345.5" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiq-L0-ARC">
+                                    <rect key="frame" x="10" y="8.5" width="381.5" height="20.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -327,11 +310,8 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="2VK-zT-tEf" firstAttribute="height" secondItem="bsr-Wv-z1t" secondAttribute="height" constant="-4" id="7yb-vh-iNX"/>
-                                <constraint firstItem="2VK-zT-tEf" firstAttribute="centerY" secondItem="bsr-Wv-z1t" secondAttribute="centerY" id="E6M-Gm-g2R"/>
-                                <constraint firstAttribute="trailing" secondItem="Jiq-L0-ARC" secondAttribute="trailing" constant="10" id="FFq-vo-Nte"/>
-                                <constraint firstItem="2VK-zT-tEf" firstAttribute="leading" secondItem="bsr-Wv-z1t" secondAttribute="leading" constant="2" id="QEQ-tV-ep9"/>
-                                <constraint firstItem="Jiq-L0-ARC" firstAttribute="leading" secondItem="2VK-zT-tEf" secondAttribute="trailing" constant="10" id="Zfq-BJ-fjf"/>
+                                <constraint firstItem="Jiq-L0-ARC" firstAttribute="trailing" secondItem="bsr-Wv-z1t" secondAttribute="trailing" constant="-10" id="FFq-vo-Nte"/>
+                                <constraint firstItem="Jiq-L0-ARC" firstAttribute="leading" secondItem="bsr-Wv-z1t" secondAttribute="leading" constant="10" id="Ybr-Dw-uq5"/>
                                 <constraint firstItem="Jiq-L0-ARC" firstAttribute="centerY" secondItem="bsr-Wv-z1t" secondAttribute="centerY" id="lYd-dB-A7l"/>
                             </constraints>
                         </view>
@@ -345,13 +325,12 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.801473496835443" colorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Qes-X1-Ec5" secondAttribute="trailing" constant="10" id="284-kB-b91"/>
                 <constraint firstItem="SYr-0f-kBq" firstAttribute="leading" secondItem="Qes-X1-Ec5" secondAttribute="leading" id="3H6-TD-3wf"/>
                 <constraint firstItem="Qes-X1-Ec5" firstAttribute="top" secondItem="zDS-9B-WaV" secondAttribute="top" id="AJ3-Xz-rrR"/>
-                <constraint firstItem="2VK-zT-tEf" firstAttribute="centerX" secondItem="zDS-9B-WaV" secondAttribute="centerX" id="FLr-EV-ZZA"/>
                 <constraint firstItem="8j6-xo-SiR" firstAttribute="trailing" secondItem="Qes-X1-Ec5" secondAttribute="trailing" id="I57-NA-fGm"/>
                 <constraint firstItem="8j6-xo-SiR" firstAttribute="height" secondItem="zDS-9B-WaV" secondAttribute="width" id="IQq-IU-jRc"/>
                 <constraint firstItem="KzT-if-HoM" firstAttribute="top" secondItem="Qes-X1-Ec5" secondAttribute="top" id="LFx-BP-96u"/>
@@ -371,11 +350,11 @@
             <connections>
                 <outlet property="brightnessColorPicker" destination="zDS-9B-WaV" id="uK8-Rx-lPX"/>
                 <outlet property="brightnessColorSliderVerticalPosition" destination="Q8q-b2-0vO" id="hQm-yI-kwJ"/>
-                <outlet property="currentColorView" destination="2VK-zT-tEf" id="byK-HU-n4u"/>
                 <outlet property="hueSaturationColorPicker" destination="Qes-X1-Ec5" id="jCo-na-oli"/>
                 <outlet property="hueSaturationColorSlider" destination="4rc-XE-ZKf" id="4H3-tM-uJy"/>
                 <outlet property="hueSaturationColorSliderHorizontalPosition" destination="3H6-TD-3wf" id="Xwn-Wk-08d"/>
                 <outlet property="hueSaturationColorSliderVerticalPosition" destination="LFx-BP-96u" id="TAE-a9-7mt"/>
+                <outlet property="selectColorView" destination="bsr-Wv-z1t" id="Rt9-33-6CH"/>
             </connections>
             <point key="canvasLocation" x="77" y="-186.5"/>
         </view>
