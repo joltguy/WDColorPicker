@@ -50,7 +50,7 @@ class ColorPickerView: UIView {
     }
  
     
-    func pickColor(gesture:UIGestureRecognizer)
+    @objc func pickColor(gesture:UIGestureRecognizer)
     {
         
     }
@@ -64,7 +64,7 @@ extension UIColor {
         var fBlue : CGFloat = 0
         var fAlpha: CGFloat = 0
         if self.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha) {
-            return (red:fRed, green:fGreen, blue:fBlue, alpha:fAlpha)
+            return (red: min(max(fRed,0),1), green:min(max(fGreen,0),1), blue:min(max(fBlue,0),1), alpha:min(max(fAlpha,0),1))
         } else {
             // Could not extract RGBA components:
             return nil
